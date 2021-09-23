@@ -14,7 +14,7 @@ function useLocalStorage({ key, initialValue }: useLocalStorageProps) {
     if (jsonValue != null) return JSON.parse(jsonValue);
     if (typeof initialValue === "function") return initialValue();
 
-    return initialValue;
+    return initialValue || '';
   });
 
   useEffect(() => {
